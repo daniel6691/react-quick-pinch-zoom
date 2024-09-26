@@ -32,6 +32,7 @@ export interface DefaultProps {
   shouldCancelHandledTouchEndEvents: boolean;
   containerProps: HTMLAttributes<HTMLDivElement>;
   animationDuration: number;
+  useControlForWheel: boolean;
   wheelScaleFactor: number;
   draggableUnZoomed: boolean;
   enforceBoundsDuringZoom: boolean;

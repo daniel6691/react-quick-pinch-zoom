@@ -52,6 +52,15 @@ export default class WheelScaleFactor extends Component {
           ref={this.quickPinchZoomRef}
           Child={this.renderChild}
         />
+
+        <pre>{`// Dont use control key for wheel-zoom
+<QuickPinchZoom useControlKeyForWheel={false} />`}</pre>
+        <Base
+          useControlKeyForWheel={false}
+          containerProps={containerProps}
+          ref={this.quickPinchZoomRef}
+          Child={this.renderChild}
+        />
       </Fragment>
     );
   }

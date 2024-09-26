@@ -130,6 +130,7 @@ class PinchZoom extends Component<Props> {
     shouldCancelHandledTouchEndEvents: false,
     tapZoomFactor: 1,
     verticalPadding: 0,
+    useControlForWheel: true,
     wheelScaleFactor: 1500,
     zoomOutFactor: 1.3,
     doubleTapZoomOutOnMaxScale: false,
@@ -974,7 +975,7 @@ class PinchZoom extends Component<Props> {
   }
 
   private _handlerWheel = (wheelEvent: WheelEvent) => {
-    if (this.props.shouldInterceptWheel(wheelEvent)) {
+    if (this.props.useControlForWheel && this.props.shouldInterceptWheel(wheelEvent)) {
       return;
     }
 
@@ -1074,6 +1075,7 @@ if (process.env.NODE_ENV !== 'production') {
   PinchZoom.propTypes = {
     children: element,
     containerProps: object,
+    useControlForWheel: bool,
     wheelScaleFactor: number,
     animationDuration: number,
     draggableUnZoomed: bool,
